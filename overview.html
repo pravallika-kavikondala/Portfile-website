@@ -1,0 +1,127 @@
+<!-- Throughout the website, navigation is achieved by creating a responsive nav bar using bootsrap. It has Home, Summary, Achievements, Gallery, Stats, Games and Email me as the navigation options. 
+
+This Overview page contains an unordered list that displays summary of all the achievements from 1986-2005. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Overview</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding-top: 2px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #EEEEEE;
+      color: black;
+    }
+
+    #bg {
+      position: fixed; 
+      width: 100%; 
+      height: 100%;
+    }
+
+    #bg img {
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      margin: auto; 
+      opacity:0.2;
+      width: 100%; 
+      height: 100%;
+    }
+    </style>
+</head>
+<body>
+
+<!-- Provides navigation accross the website. Reference: https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
+glyphicon-king placed on nav bar is from https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand active" href="" style="color: white"><b>K N Gopal</b></a>
+      <i class="glyphicon glyphicon-king" style="color:white;font-size:30px; padding-top: 10px;"></i>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="summary.html">Summary</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Achievements
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="overview.html">Overview</a></li>
+              <li><div class="dropdown-divider"></div></li>
+              <li><a href="set1.html">1986-1990</a></li>
+              <li><a href="set2.html">1991-1995</a></li>
+              <li><a href="set3.html">1996-2000</a></li>
+              <li><a href="set4.html">2001-2005</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="https://chess-db.com/public/livegames.jsp?player=5001447">Games</a></li>
+        <li><a href="email_me.html">Email Me</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Responsive full screen image background using only CSS. Reference: https://css-tricks.com/perfect-full-page-background-image/ 
+  Credits: Corey Worrell for the concept -->
+<div id="bg">
+  <img src="playing.jpg" alt="playing">
+</div>
+
+
+<div style="margin-top:3%;">
+<ul style="font-family:Garamond; font-size: 18px; margin-left: 10px; list-style-type:square;" >
+  <li>Runner-up in 19th National Junior Chess Championship held at Goa and was selected to represent India in World Junior championship in  Chili, South America in the year 1990</li><br>
+  <li>Finished 4th in X111 Asian Junior Chess Championship held at Calicut in the year 1991 and achieved International Rating</li><br>
+  <li>Combined AP State Junior Champion for Hyderabad and Vijayawada Division in 1989</li><br>
+  <li>Member of the Nagarjuna University team which won The All India Universities for the first time at Coimbatore in 1989. This is the only Sport in which Nagarjuna University won the All India Event for the first time at that period. In this championship, K N Gopal was the only player winning Board Prize on the board 5 scoring 6.5/7</li><br>
+  <li>Studied his degree in Hindu College and in his tenure Hindu College won all the Inter collegiate championships continuously and made a record of winning continuously in all the Inter collegiate events</li><br>
+  <li>K N Gopal was the first person who won the Blind Fold Rapid State Chess Championship at Vijayawada in 1999</li><br>
+  <li>Played the Simultaneous Display playing with 40 players at a time and won  38 games, drew 1 and lost 1 in 1997</li><br>
+  <li>Won the International Event, 3rd Dhamso International Chess Festival at Ambalangoda, Srilanka in the year 2013</li><br>
+  <li>Trained the promising players with his guidance in their primary stages  like P Harikrishna, Harika, Rohith, Raviteja, Revanth etc., who are presently International Grand Masters and International Masters representing the country in International level</li><br>
+  <li>Currently, he is serving as Secretary for Andhra Pradesh Chess Association from February 2018</li><br>
+</ul>
+</div>
+
+</body>
+</html>

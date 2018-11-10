@@ -1,0 +1,140 @@
+  <!-- This is the landing page of the website. Throughout the website, navigation is achieved by creating a responsive nav bar using bootsrap. It has Home, Summary, Achievements, Gallery, Stats, Games and Email me as the navigation options. 
+  
+  This page contains Google Area chart for comparing the state, national, international tournaments played to the total no. of tournaments played yearly.. -->
+
+  <html>
+  <head>
+  <title>Stats</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding-top: 2px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #EEEEEE;
+      color: black;
+    }
+
+  </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'State Level', 'National level', 'International', 'Total'],
+          ['1986', 1, 1, null, 2],
+          ['1987', 1, 0, null, 1],
+          ['1988', 1, 0, null, 1],
+          ['1989', 4, 1, null, 5],
+          ['1990', 1, 1, null, 2],
+          ['1991', 1, 3, 2, 6],
+          ['1992', 2, 3, 3, 8],
+          ['1993', 0, 1, 1, 2],
+          ['1994', 1, 0, 1, 2],
+          ['1995', 2, 1, 2, 5],
+          ['1996', 1, 1, 0, 2],
+          ['1997', 1, 2, null, 3],
+          ['1998', 1, 1, null, 2],
+          ['1999', 0, 0, null, 0],
+          ['2000', null, null, null, 0],
+          ['2001', null, null, null, 0],
+          ['2002', null, 0, null, 0],
+          ['2003', null, 1, 0, 1],
+          ['2004', null, 5, 2, 7]
+        ]);
+
+        var options = {
+          title: 'Tournaments Stats',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}, minValue:0, maxValue:9},
+          vAxis: {minValue: 0},
+          curveType: 'function',
+          legend: { position: 'bottom' }, 
+          colors: ['#D35400', '#27AE60','#3498DB', '#D4AC0D'],
+          pointSize: 5,
+          series: {
+            0: { pointShape: { type: 'star', sides: 5, dent: 0.5 } },
+            1: { pointShape: { type: 'round', sides: 5 } },
+            2: { pointShape: { type: 'triangle', sides: 5 } },
+            3: { pointShape: { type: 'square', sides: 5 } }
+          }
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body style="background-color: #EEEEEE;">
+
+  <!-- Provides navigation accross the website. Reference: https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
+  glyphicon-king placed on nav bar is from https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp -->
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand active" href="" style="color: white"><b>K N Gopal</b></a>
+      <i class="glyphicon glyphicon-king" style="color:white;font-size:30px; padding-top: 10px;"></i>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="summary.html">Summary</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Achievements
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="overview.html">Overview</a></li>
+              <li><div class="dropdown-divider"></div></li>
+              <li><a href="set1.html">1986-1990</a></li>
+              <li><a href="set2.html">1991-1995</a></li>
+              <li><a href="set3.html">1996-2000</a></li>
+              <li><a href="set4.html">2001-2005</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="active"><a href="stats.html">Stats</a></li>
+        <li><a href="https://chess-db.com/public/livegames.jsp?player=5001447">Games</a></li>
+        <li><a href="email_me.html">Email Me</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Google Chart Area. Reference:https://developers.google.com/chart/interactive/docs/gallery/areachart -->
+<div class="container-fluid" style="width:100%;">
+   <div id="curve_chart" style="width: 100%; height: 90%;  background-color: #EEEEEE;"></div> 
+</div>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+<!-- Throughout the website, navigation is achieved by creating a responsive nav bar using bootsrap. It has Home, Summary, Achievements, Gallery, Stats, Games and Email me as the navigation options. 
+
+This Summary page contains profile picture; Personal details like name, Current Fide title and year in which the title is obtained, Fide rating, World ranking, National ranking, and Fide instructor certificate. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Summary</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding-top: 2px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #EEEEEE;
+      color: black;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    #main_col {
+      float: left;
+      width: 33.33%;
+      padding: 10px;
+    }
+
+    #main_row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    @media screen and (max-width: 600px) { /* For responsiveness */
+      #main_col {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .myfont {
+      font-family: Garamond;
+      color: black;
+    }
+
+    #img_effect {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #eff:hover #img_effect {
+      opacity: 0.9;
+    }
+
+    #eff:hover .middle {
+      opacity: 1;
+    }
+
+    .text {
+      background-color:#336699;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+  </style>
+</head>
+<body style="background-color: #EEEEEE;">
+
+<!-- Provides navigation accross the website. Reference: https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
+glyphicon-king placed on nav bar is from https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand active" href="" style="color: white"><b>K N Gopal</b></a>
+      <i class="glyphicon glyphicon-king" style="color:white;font-size:30px; padding-top: 10px;"></i>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home.html">Home</a></li>
+        <li class="active"><a href="summary.html">Summary</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">Achievements
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="overview.html">Overview</a></li>
+              <li><div class="dropdown-divider"></div></li>
+              <li><a href="set1.html">1986-1990</a></li>
+              <li><a href="set2.html">1991-1995</a></li>
+              <li><a href="set3.html">1996-2000</a></li>
+              <li><a href="set4.html">2001-2005</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="https://chess-db.com/public/livegames.jsp?player=5001447">Games</a></li>
+        <li><a href="email_me.html">Email Me</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Boostrap Grid is used to partition the web page into 3 columns. Reference: https://www.w3schools.com/bootstrap/bootstrap_grid_examples.asp -->
+<div class="container-fluid" style="height:100%;">
+<div class="row" id="main_row">
+  
+  <!-- Image thumbnail class is used to style the profile picture. Profile picture is present in summary folder submitted along with the code. Reference: https://www.w3schools.com/bootstrap/bootstrap_images.asp -->
+  <div class="col-sm-4" id="main_col" style="background-color:#EEEEEE; padding: 14px; margin-left: 0%;">
+    <img src="summary\1_profile.jpg" class="img-thumbnail" style="background-color: black;" alt="Profile Pic">
+  </div>
+
+  <div class="col-sm-4 myfont container" id="main_col" style="background-color:#EEEEEE; background-blend-mode: saturation; padding-top: 5%">
+    <center>
+      <h1>K Nagendra Gopal</h1>
+      <h3>FIDE Title: Candidate Master</h3>
+      <h3>FIDE Title Year: 2008</h3> 
+      <table border="0.5px">
+        <tr>
+          <td><h3>FIDE Rating:</h3>
+          </td>
+          <td>
+            <table class="table table-condensed">
+              <thead>
+              <tr>
+                <td><h4>Standard</h4></td>
+                <td><h4>Rapid</h4></td>
+                <td><h4>Blitz</h4></td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><center><h4>1927</h4></center></td>
+                <td><h4>2192</h4></td>
+                <td><h4>2102</h4></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>          
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td><h3>World Ranking:</h3>
+          </td>
+          <td>
+            <table class="table table-condensed">
+              <thead>
+              <tr>
+                <td><h4>All players</h4></td>
+                <td><h4>Active players</h4></td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><center><h4>93334</h4></center></td>
+                <td><center><h4>40912</h4></center></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>          
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td><h3>National Ranking IND:</h3>
+          </td>
+          <td>
+            <table class="table table-condensed">
+              <thead>
+              <tr>
+                <td><center><h4>All players</h4></center></td>
+                <td><center><h4>Active players</h4></center></td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><center><h4>1936</h4></center></td>
+                <td><center><h4>616</h4></center></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>          
+        </tr>
+      </table>
+    </center>
+  </div>
+
+  <div class="col-sm-4" id="main_col" style="background-color:#EEEEEE; padding:13px;">
+    <!-- Image thumbnail class is used to style the instructor certificate. Certificate image can be found in summary folder submitted along with the code. Reference: https://www.w3schools.com/bootstrap/bootstrap_images.asp -->
+    <div class="container-fluid" id="eff" item-height="100%">
+      <img src="summary\2_certificate.jpeg" alt="Instructor_certificate" class="img-thumbnail" style="background-color: black; margin-right:3%;" id="img_effect">
+      <!-- Image Overlay Fade is used as image effect and 'Certified Trainer' message is displayed on mouse hover. Reference: https://www.w3schools.com/howto/howto_css_image_overlay.asp -->
+      <div class="middle">
+        <div class="text" style="font-family:Comic Sans MS, cursive, sans-serif; ">Certified Trainer !!</div>
+      </div>
+    </div>
+  </div>
+
+</div> 
+</div>
+</body>
+</html>

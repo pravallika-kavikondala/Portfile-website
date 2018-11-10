@@ -1,0 +1,114 @@
+<!-- This is the landing page of the website. Throughout the website, navigation is achieved by creating a responsive nav bar using bootsrap. It has Home, Summary, Achievements, Gallery, Stats, Games and Email me as the navigation options. 
+  
+This page displays the details of the tournaments played and positions secured in these tournaments for a period of 5 years i.e., from 1996-2000 in the form of a table. The data is loaded into the table from dabase. All the configurations and the code for querying the database is given in set3.js file -->
+
+<!DOCTYPE html>
+<head>
+  <title>1996-2000</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding-top: 2px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+    
+    .dropdown-content {
+    	display: none;
+    	position: absolute;
+    	background-color: #f9f9f9;
+    	min-width: 160px;
+    	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    	z-index: 1;
+	  }
+
+	  .dropdown-content a {
+    	float: none;
+    	color: black;
+    	padding: 12px 16px;
+    	text-decoration: none;
+    	display: block;
+    	text-align: left;
+	  }
+
+    .dropdown-content a:hover {
+    	background-color: #EEEEEE;
+    	color: black;
+	  }
+	  
+	  .container{
+	    background-color:#EEEEEE;
+	    color:black;
+	  }
+  </style>
+  </head>
+<body style="background-color: #EEEEEE;">
+
+<!-- Provides navigation accross the website. Reference: https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
+glyphicon-king placed on nav bar is from https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand active" href="" style="color: white"><b>K N Gopal</b></a>
+      <i class="glyphicon glyphicon-king" style="color:white;font-size:30px; padding-top: 10px;"></i>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="home.html">Home</a></li>
+        <li><a href="summary.html">Summary</a></li>
+        <li class="dropdown">
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Achievements
+        		<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          		<li><a href="overview.html">Overview</a></li>
+          		<li><div class="dropdown-divider"></div></li>
+          		<li><a href="set1.html">1986-1990</a></li>
+          		<li><a href="set2.html">1991-1995</a></li>
+          		<li><a href="set3.html">1996-2000</a></li>
+          		<li><a href="set4.html">2001-2005</a></li>
+        	</ul>
+      	</li>
+      	<li><a href="gallery.html">Gallery</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="https://chess-db.com/public/livegames.jsp?player=5001447">Games</a></li>
+        <li><a href="email_me.html">Email Me</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- The code for database is written in set3.js file -->
+<script src="set3.js"></script>
+<center>
+<div class="container" style="margin-top:10%;">
+<!-- Data fetched from database is displayed here -->
+<table class="table" id="ex-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Tournaments</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+
+
+
