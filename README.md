@@ -1,4 +1,4 @@
-# Portfile-website
+# Portfolio-website
 
 ### Motivation
 Developing a full stack project is interesting and fun to do. I wanted to make something cool and the first thing that came to my mind was ‘Developing a website for my dad!’. And yes, the outcome is this full stack project. My dad, Mr. K N Gopal, is an international chess player and he was selected to represent India-such a big nation-in World Junior Chess championship in Chili, South America in the year 1990.
